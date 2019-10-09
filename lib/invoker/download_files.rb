@@ -4,7 +4,7 @@ class DownloadFiles
   initialize_with :s3_path, :input_dir
 
   def call
-    resp = s3_client.list_objects(bucket: submissions_bucket, prefix: s3_path)
+    resp = s3_client.list_objects(bucket: iterations_bucket, prefix: s3_path)
     resp.contents.each do |object|
       fs_key = "#{input_dir}/#{object.key.gsub(/^#{s3_path}/, "")}"
       fs_dir = fs_key.split("/").tap(&:pop).join("/")
@@ -13,7 +13,7 @@ class DownloadFiles
 
       s3_client.get_object(
         response_target: fs_key,
-        bucket: submissions_bucket,
+        bucket: iterations_bucket,
         key: object.key
       )
     end
@@ -27,8 +27,8 @@ class DownloadFiles
     )
   end
 
-  def submissions_bucket
-    secrets["aws_submissions_bucket"]
+  def iterations_bucket
+    secrets["aws_iterations_bucket"]
   end
 
   memoize

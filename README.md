@@ -13,4 +13,3 @@ This will then be invoked by the orchestrator when appropriate.
 ## Copyright
 
 All content in this repository is Copyright to Exercism and licenced under MIT.
-
