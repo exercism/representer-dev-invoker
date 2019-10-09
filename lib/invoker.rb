@@ -17,6 +17,6 @@ module Invoker
 
     DownloadFiles.(s3_path, input_dir)
 
-    system("cd ../ruby-test-runner && bin/run.sh two_fer #{input_dir} #{output_dir}")#, out: "/dev/null", err: "/dev/null")
+    system("cd ../ruby-representer && bin/run.sh two_fer #{input_dir} #{output_dir}")#, out: "/dev/null", err: "/dev/null")
   end
 end

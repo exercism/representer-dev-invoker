@@ -1,8 +1,8 @@
-# Test-runner invoker for local development envs
+# Representer invoker for local development envs
 
 ## Run in development
 
-To run locally, you need to also clone https://github.com/exercism/test-runner-orchestrator at the same level directory as this repo.
+To run locally, you need to also clone https://github.com/exercism/analyzer-orchestrator and use the `add-representers` branch, at the same level directory as this repo.
 
 Once that's done:
 - Populate `config/secrets.yml` with same sort of keys as your local website.
